@@ -14,12 +14,11 @@
   1. str.match
   2. search
   3. [extract](https://blog.csdn.net/Guo_ya_nan/article/details/80920007)
-  
-+ 过程
 
 + 写入excel 
 
-## 
+## 数据清洗
++ [参考脚本1](https://github.com/Ddd1101/BGP_1)
 
 ## Crawler
 
