@@ -16,7 +16,7 @@
    
     + 细化到单元格的清洗 df.iterrow loc/at
       - [参考同学写脚本的方式](https://github.com/Ddd1101/BGP_1)
-      - [最佳实践](https://github.com/pandas-dev/pandas/issues/15269) 以及根据最佳实践自己的尝试：[脚本](https://github.com/A-ZHANG1/PythonExerciseBook/blob/master/cleaner.py)[jupyter](https://github.com/A-ZHANG1/PythonExerciseBook/blob/master/regexCleaner.ipynb)
+      - [最佳实践](https://github.com/pandas-dev/pandas/issues/15269) 以及根据最佳实践自己的尝试：[脚本](https://github.com/A-ZHANG1/PythonExerciseBook/blob/master/cleaner.py) [jupyter](https://github.com/A-ZHANG1/PythonExerciseBook/blob/master/regexCleaner.ipynb)
       - [操作方式列表](https://blog.csdn.net/qimiejia5584/article/details/78565953)
       
       修改单元格的值 df.set_value(idx, colName, newValue)
@@ -24,6 +24,8 @@
     + pandas re模块
       1. re.match(pattern, string)从头开始匹配
       2. re.search(pattern, string)从任意位置开始匹配
+      
+    + pandas group count 等基本数据分析操作行为
       
       return None if not matched; return matched object if matched
 
