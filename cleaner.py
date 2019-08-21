@@ -2,14 +2,16 @@
 import pandas as pd
 import xlrd
 import re
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
 fileName = '编码20150228最终版(查).xlsx'
 df = pd.read_excel(fileName)
 
+spec = '规格型号'
+
 class Cleaner:
     def clean(self):
-        spec = '规格型号'
-
         for idx,row in df.iterrows():
             cell = df.loc[idx,spec] #str object
             #去除首尾空格
@@ -64,5 +66,60 @@ class Cleaner:
         #检查包含半角数组符号
         # print(re.search(r'[^0-9a-zA-Z]+',eg))
 
-c = Cleaner()
-c.clean()
+supplierName = '供应商名称'
+supplierNameDic = '供应商简称'
+
+#按照单元格内容删除指定行
+class Dropper:
+    def drop(self):
+
+        # indexNames = df[ (df[supplierName] >= 30) & (dfObj['Country'] == 'India') ].index
+
+        indexNamesNull = df[pd.isnull(df[supplierName])].index
+        df.drop( indexNamesNull , inplace=True)
+
+        indexNamesNo = df[df[supplierName] =='no'].index
+        df.drop( indexNamesNo , inplace=True)
+
+        # print(df)
+
+#规格型号模糊匹配
+scoreList = []
+class FuzzyMatch:
+    def fuzzyMatch(self):
+        for sn in set(df[supplierName].str.strip()):
+            for sn2 in set(df[supplierNameDic].str.strip()):
+                score = fuzz.ratio(sn, sn2)
+                scoreList.append(score)
+        print(scoreList)
+
+#规格模式匹配
+patternList = [r'^((?!kW).)*$']
+class PatternMatch:
+    def notInPattern(self):
+        for sn in set(df[spec].str.strip()):
+            for p in patternList:
+                if re.match(p, sn) != None:
+                    scoreList.append(sn)
+        print(scoreList)
+
+#统计结果及展示
+class Statistics:
+    def getStatistics(self):
+        typeStandards = df.groupby(spec).sum()
+        print(typeStandards)
+
+# c = Cleaner()
+# c.clean()
+
+# d = Dropper()
+# d.drop()
+#
+# fm = FuzzyMatch()
+# fm.fuzzyMatch()
+
+# st = Statistics()
+# # st.getStatistics()
+
+st = PatternMatch()
+st.notInPattern()
