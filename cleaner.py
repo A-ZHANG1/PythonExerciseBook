@@ -8,6 +8,9 @@ from fuzzywuzzy import process
 fileName = '编码20150228最终版(查).xlsx'
 df = pd.read_excel(fileName)
 
+#读入csv文件和解决中文文件名无法识别问题
+#pd.read_csv(filename, engine = 'python')
+
 spec = '规格型号'
 
 class Cleaner:
@@ -76,7 +79,7 @@ class Dropper:
         # indexNames = df[ (df[supplierName] >= 30) & (dfObj['Country'] == 'India') ].index
 
         indexNamesNull = df[pd.isnull(df[supplierName])].index
-        df.drop( indexNamesNull , inplace=True)
+        df.drop( indexNamesNull , inplace=True) #inplace=True:在原对象上修改
 
         indexNamesNo = df[df[supplierName] =='no'].index
         df.drop( indexNamesNo , inplace=True)
@@ -109,6 +112,9 @@ class Statistics:
         typeStandards = df.groupby(spec).sum()
         print(typeStandards)
 
+        # df_out = pd.concat([df.set_index('index'),df.set_index('index').agg(['max','min','mean'])]).rename(index={'max':'Max','min':'Min','mean':'Average'}).reset_index()
+
+
 # c = Cleaner()
 # c.clean()
 
@@ -118,8 +124,8 @@ class Statistics:
 # fm = FuzzyMatch()
 # fm.fuzzyMatch()
 
-# st = Statistics()
-# # st.getStatistics()
+st = Statistics()
+st.getStatistics()
 
-st = PatternMatch()
-st.notInPattern()
+# st = PatternMatch()
+# st.notInPattern()
