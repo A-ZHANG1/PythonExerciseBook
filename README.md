@@ -25,6 +25,11 @@
       1. re.match(pattern, string)从头开始匹配
       2. re.search(pattern, string)从任意位置开始匹配
       
+    + 字符串模糊匹配 
+      1. 编辑距离（动归）
+      2. fuzzywuzzy库 leskov距离
+      3. 通过regex及pattern matching
+      
     + pandas group count 等基本数据分析操作行为
       
       return None if not matched; return matched object if matched
