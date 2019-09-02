@@ -6,6 +6,12 @@
   exit()
   
   jupyter notebook
+  
+## Jupyter Notebook操作问题
+
+  + cell运行顺序问题 ：需要重启jupyter.
+  
+  + OS Error : engine = 'python'
 
 ##  数据清洗
 + Regex 基本匹配符 [菜鸟教程](https://www.runoob.com/python/python-reg-expressions.html) 
