@@ -43,3 +43,10 @@
 ## Crawler
 
 药品知识图谱用到的[crawler](https://github.com/A-ZHANG1/drug/tree/master/crawler/crawler).涉及到数据库连接和类、方法的基本写法。
+
+## Python语言问题 [61A](https://www.bookstack.cn/read/sicp-py-zh/ch5.md#5.2.5%20%E6%B5%81)
+
+...
+
+## 基础JS
+
