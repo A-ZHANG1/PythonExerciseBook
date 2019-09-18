@@ -45,7 +45,11 @@
 药品知识图谱用到的[crawler](https://github.com/A-ZHANG1/drug/tree/master/crawler/crawler).涉及到数据库连接和类、方法的基本写法。
 
 ## Python语言问题 [61A](https://www.bookstack.cn/read/sicp-py-zh/ch5.md#5.2.5%20%E6%B5%81)
-
++ 层次（树形）结构 -产生于- 数据（？服务封装/类节点）的封闭性 （tuple的树形存储方式） 
++ 递归处理树形结构：将树操作降至枝干（的枝干...）操作，直到叶子节点 ？Guoqiang 某一习题
++ 递归函数均为高阶函数
++ python描述内置类函数hin清楚的[官方文档](https://docs.python.or
+g/3/library/stdtypes.html#set)
 ...
 
 ## 基础JS
