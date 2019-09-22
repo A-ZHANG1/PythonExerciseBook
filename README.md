@@ -50,6 +50,9 @@
   1. [SICP](http://composingprograms.com/pages/12-elements-of-programming.html)
   2. [中文版](https://www.bookstack.cn/read/sicp-py-zh/2.5.md)
   3. [课件]（http://www-inst.eecs.berkeley.edu/~cs61a/fa11/61a-python/content/www/slides/61A-013-Constraints_1pp.pdf）
+  4.模板
+   + [temp json obj]（https://gitlab.com/sjtuSE/wristband-server/blob/master/py/WarningModule.py）
+   + 
 
 + 层次（树形）结构 -产生于- 数据（？服务封装/类节点）的封闭性 （tuple的树形存储方式） 
 + 递归处理树形结构：将树操作降至枝干（的枝干...）操作，直到叶子节点 ？Guoqiang 某一习题
