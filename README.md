@@ -50,7 +50,7 @@
   1. [SICP](http://composingprograms.com/pages/12-elements-of-programming.html)
   2. [中文版](https://www.bookstack.cn/read/sicp-py-zh/2.5.md)
   3. [课件]（http://www-inst.eecs.berkeley.edu/~cs61a/fa11/61a-python/content/www/slides/61A-013-Constraints_1pp.pdf）
-  4.模板
+  4. 模板
    + [temp json obj]（https://gitlab.com/sjtuSE/wristband-server/blob/master/py/WarningModule.py）
    + 
 
@@ -59,7 +59,27 @@
 + 递归函数均为高阶函数
 + python描述内置类函数hin清楚的[官方文档](https://docs.python.or
 g/3/library/stdtypes.html#set)
-...
++ None vs. null
+  ```{python}
+  1. python中null不是关键字。一般用来表示空字符串。
+  Nonetype obj和将实例的某个属性初始化为None的区别在于，是否可通过root.val == None访问属性值
+  2. None,  False, 空字符串"", 0, 空列表[], 空字典{}, 空元组()都相当于False
+  ```
++ == vs. is
+  ```
+  1. https://blog.csdn.net/Primeprime/article/details/77186109
+  == 可被 _eq_重写
+  2. is 判断是否为同一对象（内存地址相同），==判断值是否相同
+  ```
++ dir(root) # python 查看实例对象所有属性
++ 字符串连接： str1 + str2; str1.join(lst_of_str)
++ set 交集 & ？平均时间复杂度问题。和python set实现有关吗
++ hashmap即map及dict O(1)
+  ```{python}
+  from collections import defaultdict 
+  hashmap = defaultdict(int)
+  hashmap[key] = val
+  ```
 
 ## 图处理
 
